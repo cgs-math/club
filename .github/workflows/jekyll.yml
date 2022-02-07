@@ -1,0 +1,26 @@
+name: Push to GitHub Pages
+
+on:
+  push
+
+jobs:
+  jekyll:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: sudo apt-get install nodejs
+
+    # Use GitHub Actions' cache to shorten build times and decrease load on servers
+    - uses: actions/cache@v2
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+
+    # Specify the target branch (optional)
+    - uses: helaili/jekyll-action@2.2.0
+      with:
+        token: ${{ secrets.MY_GITHUB_TOKEN }}
+        target_branch: 'gh-pages'
+        jekyll_src: '/'

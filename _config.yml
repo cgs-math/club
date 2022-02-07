@@ -1,0 +1,62 @@
+# Setup
+title: Maths Club
+description: CGS Maths Club Content Repository
+github: [metadata]
+url: "https://cgs-math.github.io"
+baseurl: "/club"
+markdown: kramdown
+paginate: 1
+permalink: pretty
+copyright: Garv Shah
+
+collections:
+  posts:
+    output: true
+    permalink: /posts/:title
+
+# Gems
+plugins:
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# Optimize Jekyll
+exclude:
+  - .editorconfig
+  - .git
+  - .jekyll-cache
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
+  - vendor/bundle
+
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+# Options
+
+# Replace this value and uncomment to enable Google Analytics tracking
+# ga_analytics: UA-000000-0
+
+# Specify the author for blog posts
+author:
+  name: Garv Shah
+  url: https://garv-shah.github.io
+  email: gshah.6110@gmail.com
+
+# Custom vars
+version: 1.0.0
+
+# Navbar page list
+nav:
+  - title: Home
+    url: https://cgs-math.github.io/club
+
+kramdown:
+  math_engine: katex
+feed:
+  posts_limit: 50
+  excerpt_only: true

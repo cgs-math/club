@@ -1,0 +1,7 @@
+{
+  "name": "maths-club-test",
+  "version": "1.0.0",
+  "dependencies": {
+    "color-name": "^1.1.4"
+  }
+}
