@@ -86,7 +86,7 @@ Besides that, I used [this](https://github.com/andrewhwanpark/dark-poole) Jekyll
 
 ## Build Locally
 To be honest, it doesn't exactly matter if you create a post and push it directly to the main branch here, since you can always change it. Building locally is mostly useful for quick testing purposes, or debugging (GitHub doesn't give the best error results) <br>
-**The below instructions are for a Mac, I'm not currently using a Windows device for development, and the people that this explanation is for don't need it. You need admin permissions too.** <br><br>
+**The below instructions are for a Mac, I'm not currently using a Windows/Linux device for development, and the people that this explanation was originally intended for didn't need it either. Therefore, I haven't written a guide for any other platforms. Also note that if the commands below don't work, prepending them with sudo may help** <br><br>
 To start, first clone the GitHub repo from above. It's recommended to use an app such as GitHub Desktop, since the command line can be a bit daunting at first. Just install the app from here (https://desktop.github.com) and log in. You should see an option to clone a repository, and you can either paste the https link in or select it if it's there. <br>
 Time for the terminal! This repo uses Bundler to manage all the dependencies. For this, you'll first need to install Ruby. You probably already have it installed.
 If ```ruby -v``` returns anything besides the command ruby not being found, skip the next step, as you already have it. If not, use Homebrew, and type in ```sudo brew install ruby```.
@@ -94,7 +94,7 @@ If ```ruby -v``` returns anything besides the command ruby not being found, skip
 Now to install Bundler. Just type in :
 
 ```
-sudo gem install bundler
+gem install bundler
 ```
 
 Type in your password if required. Now navigate to the repository you cloned before using the cd command. If you used the default for GitHub Desktop, the command should be:
@@ -106,8 +106,8 @@ cd ~/Documents/GitHub/club/
 Now run these two commands.
 
 ```
-sudo bundle config set --local path 'vendor/bundle'
-sudo bundle install
+bundle config set --local path 'vendor/bundle'
+bundle install
 ```
 
 If all went well, it should have installed all the gem dependencies, and you should be good to go. Just run ```bundle exec jekyll serve``` and it should start hosting the site at http://127.0.0.1:4000/. Yay!
