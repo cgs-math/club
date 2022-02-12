@@ -225,6 +225,18 @@ function presetTheme(preset) {
         theme = '#3b99e0'
         bar = '#ffffff'
         highlight = '#0d6efd'
+    } else if (preset === 'doole') {
+        switch_shadow = '#fff'
+        switch_icon = "𝐃️"
+        switch_text = "oole"
+        text = '#d9d9d9'
+        secondary_text = '#6c757d'
+        muted_text = '#6c757d'
+        bg = '#1e1f20'
+        secondary_bg = '#212529FF'
+        theme = '#d9d9d9'
+        bar = '#FFFFFF26'
+        highlight = '#FFFFFFBF'
     }
     
     if (localStorage.getItem('switchedTheme') === 'true') {
