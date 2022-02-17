@@ -1,4 +1,4 @@
-# Maths Club Websit
+# Maths Club Website
 Hi, I'm Garv! Welcome to the CGS Maths Club repository! <br>
 This repo contains an archive of questions from the Jerry Mao Maths Club, and serves as a website for questions and solutions over time. <br>
 
