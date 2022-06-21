@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<!-- SEO Stuff -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Maths Club</title>
+    <meta property="og:type" content="website">
+    <meta name="description" content="CGS Maths Club">
+    <meta name="keywords" content="maths, CGS">
+    <meta name="author" content="Garv Shah">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="assets/css/vanilla-zoom.min.css">
+    <link rel="stylesheet" href="assets/css/theming.css">
+</head>
+
+<body>
+<input type="checkbox" class="theme-switch" id="theme-switch" /> <!-- This is the button for the checkbox that controls whether it's light or dark mode -->
+<div id="page">
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar" style="background-color: var(--bar-color) !important; transition: color 0.4s, background-color 0.4s;">
+        <div class="container">
+            <label for="theme-switch" class="switch-label"></label>
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1" style="border-color: var(--secondary-text-color); color: var(--secondary-text-color)">
+                <span class="visually-hidden" style="display:table;">Toggle navigation</span> <!-- This is a navigation button that appears on screens without enough horizontal space to display the tabs at the top -->
+                <span style="font-size: 200%; display:table-cell;  vertical-align:middle; font-family: Libertine, sans-serif; position:relative; top:-0.1em; line-height: 25px">≡</span>
+                <!-- This was initially an icon, but due to the fact that it couldn't change its colour dynamically, it was replaced with an ascii symbol. The font is there to ensure consistency across platforms -->
+            </button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <!-- The tabs for navigation that read to different parts of the site -->
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="color: var(--secondary-text-color); transition: color 0.4s, background-color 0.4s;">Leaderboards</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="https://www.youtube.com/watch?v=FtutLA63Cp8" style="color: var(--secondary-text-color); transition: color 0.4s, background-color 0.4s;">Take quiz</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="settings" style="color: var(--secondary-text-color); transition: color 0.4s, background-color 0.4s;">Settings</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page blog-post-list"> <!-- The main body of the site -->
+        <section class="clean-block clean-blog-list dark" style="background-color: var(--bg-color); transition: color 0.4s, background-color 0.4s;">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info" style="color: var(--theme-color) !important; transition: color 0.4s, background-color 0.4s;">Maths Club</h2>
+                    <p style="color: var(--secondary-text-color); transition: color 0.4s, background-color 0.4s;">Welcome to the content repository of the CGS maths club!</p>
+                </div>
+
+                <!-- This is the div where all of the posts are added to. This is done by the loadFeed.js file, which grabs the RSS feed and pushes it to this div -->
+                <div class="block-content" style="background-color: var(--secondary-bg-color); transition: color 0.4s, background-color 0.4s;"></div>
+            </div>
+        </section>
+    </main>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="assets/js/vanilla-zoom.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="loadFeed.js" type="text/javascript"></script>
+
+    <!-- This script essentially saves the user's theme selection between light mode and dark mode (true if the button is clicked, false if it is not) -->
+    <script>
+        const themeSwitch = document.querySelector('.theme-switch');
+        themeSwitch.checked = localStorage.getItem('switchedTheme') === 'true';
+
+        themeSwitch.addEventListener('change', function(e) {
+            if (e.currentTarget.checked === true) {
+                localStorage.setItem('switchedTheme', 'true');
+            } else {
+                localStorage.removeItem('switchedTheme');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
